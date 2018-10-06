@@ -27,6 +27,11 @@ if (file_exists('core/config/config.inc.php')) {
     MakeDump ($database_server,$dbase,$database_user,$database_password,"MODx Revolution");
 }
 
+//SimplaCMS / OkayCMS
+if (file_exists('config/config.php')) {
+    $config = parse_ini_file('config/config.php');
+    MakeDump ($config['db_server'],$config['db_name'],$config['db_user'],$config['db_password'], "SimplaCMS/OkayCMS");
+}
 
 function MakeDump($dbhost,$dbname,$dbuser,$dbpassword,$engine)
 {
